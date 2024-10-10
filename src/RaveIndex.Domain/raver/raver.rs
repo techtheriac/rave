@@ -3,5 +3,5 @@ pub struct Raver {
   pub first_name: String,
   pub last_name: String,
   pub email: String,
-  pub attends: vec<Event>
+  pub attends: Vec<Event>
 }
