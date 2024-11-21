@@ -1,0 +1,14 @@
+name: Docker Image CI for GHCR
+
+on: push
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checkout@v3
+      - name: build and push the Image
+        run: |
+          docker login --username techtheriac --password ${{ secrets.GH_ACCESS_TOKEN }} ghrc.io
+          docker build . --tag ghcr.io/techtheriac/rave:lastest
+          docker push ghcr.io/techtheriac/rave:lastest
