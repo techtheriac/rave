@@ -13,6 +13,6 @@ COPY . .
 # We'll use the release profile to make it faaaast
 RUN cargo build --release
 
-EXPOSE 3001
+EXPOSE 3000
 # When `docker run` is executed, launch the binary!
 ENTRYPOINT ["./target/release/rave-index"]
